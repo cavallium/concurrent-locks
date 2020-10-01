@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>it.cavallium</groupId>
+  <artifactId>concurrent-locks</artifactId>
+  <version>1.0.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>concurrent-locks</name>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/npgall/${project.artifactId}.git</url>
+    <connection>scm:git:https://github.com/npgall/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:npgall/${project.artifactId}.git</developerConnection>
+  </scm>
+  <developers>
+    <developer>
+      <id>npgall</id>
+      <name>Niall Gallagher</name>
+      <email>niall@npgall.com</email>
+      <url>http://www.npgall.com</url>
+      <roles>
+        <role>original developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>cavallium</id>
+      <name>Andrea Cavalli</name>
+      <email>nospam@warp.ovh</email>
+      <url>http://cavallium.it</url>
+      <roles>
+        <role>owner</role>
+      </roles>
+    </developer>
+  </developers>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>publish-to-mchv</id>
+      <properties/>
+      <distributionManagement>
+        <repository>
+          <id>mchv</id>
+          <name>MCHV Apache Maven Packages</name>
+          <url>https://mvn.mchv.eu/repository/mchv/</url>
+        </repository>
+      </distributionManagement>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

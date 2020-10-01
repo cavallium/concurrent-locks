@@ -3,7 +3,7 @@
 This project provides additional Lock implementations for Java, extending the base functionality and performance provided by the JDK.
 
 # ReentrantReadWriteUpdateLock #
-The [ReentrantReadWriteUpdateLock](http://htmlpreview.github.io/?http://raw.githubusercontent.com/npgall/concurrent-locks/master/documentation/javadoc/apidocs/com/googlecode/concurentlocks/ReentrantReadWriteUpdateLock.html) provided in this project, is like the [ReentrantReadWriteLock](http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html) counterpart in the JDK, but in addition to providing a _read_ lock and a _write_ lock, it provides a third option: an _update_ lock.
+The <code>ReentrantReadWriteUpdateLock</code> provided in this project, is like the <code>ReentrantReadWriteLock</code> counterpart in the JDK, but in addition to providing a _read_ lock and a _write_ lock, it provides a third option: an _update_ lock.
 
 Unlike the JDK, this efficiently supports **_read-before-write_ data access patterns**.
 
@@ -101,7 +101,7 @@ public Document readDocument() {
 |<sub>Write          </sub>|<sub>• Read (exclusive)<br>• Write (exclusive)</sub>|<sub>• None → Write<br>• Update → Write<br>• Write → Write (reentrant)</sub>|<sub>• Write → Update<br>• Write → None</sub>|<sub>• Write → Read                 </sub>|
 
 <h1>CompositeLock</h1>
-A lock spanning a group of backing locks. When locked <a href='http://htmlpreview.github.io/?http://raw.githubusercontent.com/npgall/concurrent-locks/master/documentation/javadoc/apidocs/com/googlecode/concurentlocks/CompositeLock.html'>CompositeLock</a> locks all backing locks. When unlocked, it unlocks all backing locks.<br>
+A lock spanning a group of backing locks. When locked <code>CompositeLock</code> locks all backing locks. When unlocked, it unlocks all backing locks.<br>
 <br>
 Ensures that either all backing locks are acquired, or no backing locks are acquired, by applying roll back logic such that failure to acquire any one lock, causes all locks already acquired to be unlocked.<br>
 <br>
@@ -110,7 +110,7 @@ Lock acquisition methods which take timeouts, are implemented such that the time
 Locks are unlocked in the reverse of the order in which the were acquired.<br>
 <br>
 <h1>Utilities</h1>
-The <a href='http://htmlpreview.github.io/?http://raw.githubusercontent.com/npgall/concurrent-locks/master/documentation/javadoc/apidocs/com/googlecode/concurentlocks/Locks.html'>Locks</a> class provides utility methods which mimic the JDK <code>java.util.concurrent.locks.Lock</code> API, but instead apply those operations on groups of backing locks.<br>
+The <code>Locks</code> class provides utility methods which mimic the JDK <code>java.util.concurrent.locks.Lock</code> API, but instead apply those operations on groups of backing locks.<br>
 <br>
 Provides methods:<br>
 <ul><li><code>lockAll(Iterable&lt;L&gt; locks)</code>
@@ -121,24 +121,34 @@ Provides methods:<br>
 
 <h1>Usage in Maven and Non-Maven Projects</h1>
 
-Concurrent-Locks is in Maven Central, and can be added to a Maven project as follows:
+Concurrent-Locks is in MCHV Apache Maven Repository, and can be added to a Maven project as follows:
+
 ```xml
-<dependency>
-    <groupId>com.googlecode.concurrent-locks</groupId>
-    <artifactId>concurrent-locks</artifactId>
-    <version>1.0.0</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>mchv</id>
+        <name>MCHV Apache Maven Packages</name>
+        <url>https://mvn.mchv.eu/repository/mchv/</url>
+    </repository>
+</repositories>
 ```
 
-For non-Maven projects, the library can be downloaded directly from Maven Central [here](http://search.maven.org/remotecontent?filepath=com/googlecode/concurrent-locks/concurrent-locks/).
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.cavallium</groupId>
+        <artifactId>concurrent-locks</artifactId>
+        <version>1.0.2</version>
+    </dependency>
+</dependencies>
+```
+
+For non-Maven projects, the library can be downloaded directly from MCHV [here](https://mvn.mchv.eu/repository/mchv/it/cavallium/concurrent-locks/1.0.2/concurrent-locks-1.0.2.jar).
 
 <h1>Project Status</h1>
 
   * Development of the library is complete, and all code has 100% test coverage
-  * The completed library has been deployed to Maven central as version 1.0.0
+  * The completed library has been deployed to Maven central as version 1.0.2
   * There are no known bugs
-  * For a technical discussion of locks in this project, see the thread on the JDK <a href='http://cs.oswego.edu/pipermail/concurrency-interest/2013-July/thread.html#11621'>concurrency-interest mailing list</a>
-  * API JavaDocs are available <a href='http://htmlpreview.github.io/?http://raw.githubusercontent.com/npgall/concurrent-locks/master/documentation/javadoc/apidocs/index.html'>here</a>
 
-Report any bugs/feature requests in the [Issues](http://github.com/npgall/concurrent-locks/issues) tab.<br>
-For support please use the <a href='http://groups.google.com/forum/?fromgroups#!forum/concurrent-locks-discuss'>Discussion Group</a>, not direct email to the developers.
+Report any bugs/feature requests in the [Issues](http://github.com/Cavallium/concurrent-locks/issues) tab.<br>
