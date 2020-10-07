@@ -3,7 +3,7 @@
 
   <groupId>it.cavallium</groupId>
   <artifactId>concurrent-locks</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>concurrent-locks</name>
@@ -17,7 +17,7 @@
     <url>https://github.com/Cavallium/concurrent-locks.git</url>
     <connection>scm:git:https://github.com/Cavallium/concurrent-locks.git</connection>
     <developerConnection>scm:git:https://github.com/Cavallium/concurrent-locks.git</developerConnection>
-    <tag>v1.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
