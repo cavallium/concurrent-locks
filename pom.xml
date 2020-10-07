@@ -17,7 +17,6 @@
     <url>https://github.com/Cavallium/concurrent-locks.git</url>
     <connection>scm:git:https://github.com/Cavallium/concurrent-locks.git</connection>
     <developerConnection>scm:git:https://github.com/Cavallium/concurrent-locks.git</developerConnection>
-    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
@@ -79,9 +78,6 @@
             </goals>
           </execution>
         </executions>
-        <configuration>
-          <branchName>master</branchName>
-        </configuration>
       </plugin>
     </plugins>
   </build>
