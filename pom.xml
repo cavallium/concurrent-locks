@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>it.cavallium</groupId>
@@ -12,13 +11,13 @@
     <license>
       <name>The Apache Software License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
     </license>
   </licenses>
   <scm>
-    <url>https://github.com/npgall/${project.artifactId}.git</url>
-    <connection>scm:git:https://github.com/npgall/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:npgall/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/Cavallium/concurrent-locks.git</url>
+    <connection>scm:git:https://github.com/Cavallium/concurrent-locks.git</connection>
+    <developerConnection>scm:git:https://github.com/Cavallium/concurrent-locks.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
@@ -44,19 +43,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <profiles>
-    <profile>
-      <id>publish-to-mchv</id>
-      <properties/>
-      <distributionManagement>
-        <repository>
-          <id>mchv</id>
-          <name>MCHV Apache Maven Packages</name>
-          <url>https://mvn.mchv.eu/repository/mchv/</url>
-        </repository>
-      </distributionManagement>
-    </profile>
-  </profiles>
+  <distributionManagement>
+    <repository>
+      <id>mchv</id>
+      <name>MCHV Apache Maven Packages</name>
+      <url>https://mvn.mchv.eu/repository/mchv/</url>
+    </repository>
+    <snapshotRepository>
+      <id>mchv</id>
+      <name>MCHV Apache Maven Packages</name>
+      <url>https://mvn.mchv.eu/repository/mchv-snapshot/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <plugins>
@@ -67,6 +65,22 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <executions>
+          <execution>
+            <id>default</id>
+            <goals>
+              <goal>perform</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <branchName>master</branchName>
         </configuration>
       </plugin>
     </plugins>
