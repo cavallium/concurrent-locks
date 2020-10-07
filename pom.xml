@@ -3,7 +3,7 @@
 
   <groupId>it.cavallium</groupId>
   <artifactId>concurrent-locks</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>concurrent-locks</name>
@@ -17,6 +17,7 @@
     <url>https://github.com/Cavallium/concurrent-locks.git</url>
     <connection>scm:git:https://github.com/Cavallium/concurrent-locks.git</connection>
     <developerConnection>scm:git:https://github.com/Cavallium/concurrent-locks.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
@@ -71,9 +72,12 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>3.0.0-M1</version>
         <configuration>
+          <pushChanges>false</pushChanges>
+          <remoteTagging>false</remoteTagging>
           <preparationGoals>clean verify</preparationGoals>
-          <tagNameFormat>v@{project.version}</tagNameFormat>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <localCheckout>true</localCheckout>
+          <suppressCommitBeforeBranch>true</suppressCommitBeforeBranch>
+          <suppressCommitBeforeTag>true</suppressCommitBeforeTag>
         </configuration>
       </plugin>
     </plugins>
