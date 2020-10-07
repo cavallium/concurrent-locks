@@ -77,8 +77,6 @@
           <preparationGoals>clean verify</preparationGoals>
           <localCheckout>true</localCheckout>
           <tagNameFormat>v@{project.version}</tagNameFormat>
-          <suppressCommitBeforeBranch>true</suppressCommitBeforeBranch>
-          <suppressCommitBeforeTag>true</suppressCommitBeforeTag>
         </configuration>
       </plugin>
     </plugins>
