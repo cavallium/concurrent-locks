@@ -138,17 +138,17 @@ Concurrent-Locks is in MCHV Apache Maven Repository, and can be added to a Maven
     <dependency>
         <groupId>it.cavallium</groupId>
         <artifactId>concurrent-locks</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.5</version>
     </dependency>
 </dependencies>
 ```
 
-For non-Maven projects, the library can be downloaded directly from MCHV [here](https://mvn.mchv.eu/repository/mchv/it/cavallium/concurrent-locks/1.0.2/concurrent-locks-1.0.2.jar).
+For non-Maven projects, the library can be downloaded directly from MCHV [here](https://mvn.mchv.eu/repository/mchv/it/cavallium/concurrent-locks/1.0.5/concurrent-locks-1.0.5.jar).
 
 <h1>Project Status</h1>
 
   * Development of the library is complete, and all code has 100% test coverage
-  * The completed library has been deployed to Maven central as version 1.0.2
+  * The completed library has been deployed to Maven central as version 1.0.5
   * There are no known bugs
 
 Report any bugs/feature requests in the [Issues](http://github.com/Cavallium/concurrent-locks/issues) tab.<br>
